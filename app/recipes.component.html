@@ -1,0 +1,14 @@
+<h2>My Heroes</h2>
+<ul class="recipes">
+  <li *ngFor="#recipe of recipes"
+    [class.selected]="recipe === selectedRecipe"
+    (click)="onSelect(recipe)">
+    <span class="badge">{{recipe.id}}</span> {{recipe.name}}
+  </li>
+</ul>
+<div *ngIf="selectedRecipe">
+  <h2>
+    {{selectedRecipe.name | uppercase}} is my recipe
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
